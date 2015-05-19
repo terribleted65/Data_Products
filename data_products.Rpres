@@ -1,0 +1,35 @@
+Coursera - Data Products (Product Quantiles Application)
+========================================================
+author: Mike Munster 
+date: 05/18/2015
+
+Pricing Quantiles Overview
+========================================================
+
+- The catalog quantile comparison is one method used by XYZ.com to evaluate how the prices of products in categories changes
+- The customer base is very price sensitive and this application allows management to quickly evaluate how the shift in price might be impacting the number of items sold
+- The catalog data used is a random sample of 5,000 items from a catalog of millions of products.
+
+Snapshot from the April 23rd Catalog
+========================================================
+
+```{r, echo=FALSE}
+catalog_0423 <- read.csv("catalog_0423.csv",fill=TRUE, stringsAsFactors=FALSE, header=TRUE)
+head(catalog_0423)
+```
+
+Product Type Count of April 23 Catalog
+========================================================
+
+```{r, echo=FALSE}
+library(plyr)
+catalog_0423 <- read.csv("catalog_0423.csv",fill=TRUE, stringsAsFactors=FALSE, header=TRUE)
+count(catalog_0423, c("Type"))
+```
+
+Product Quantile Application
+========================================================
+
+- The Shiny UI takes two inputs: Catalog Date, Product Group
+- The Shiny Server contains two functions.  The first determines which catalog the user wishes to evaluate and then calls to calculate the quantiles the quantiles for product types in the product group requested.
+- The Shiny Server quantiles are calculated using tapply function
