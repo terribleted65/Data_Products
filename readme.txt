@@ -1,6 +1,8 @@
 Coursera: Data Products Course
 
-Assignment: Shiny App http://tedth.shinyapps.io/data_products/
+Assignment: Shiny App 
+
+App: http://tedth.shinyapps.io/data_products/
 
 Description: The Shiny App uses a random sample of company XYZ.com's product catalog to create a list of price quantiles. This app will be used by the product managers in the product catagories to monitor the pricing of their products as their customer base is very price sensitive. 
 
@@ -8,3 +10,5 @@ How to use: Upon starting the app using the link to the shinyapps.io site, the u
 
 Catalog Date: April 23, April 30
 Product Category: Apparel, Home
+
+Presentation: http://rpubs.com/terribleted65/80851
