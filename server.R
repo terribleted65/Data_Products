@@ -2,6 +2,8 @@ library(shiny)
 #
 library(plyr)
 #
+# determine which catalog the user has requested
+#
 which_catalog <- function(in_catalog,in_category) {
   if (in_catalog == 'April 23') {
     catalog_input <- read.csv("catalog_0423.csv",fill=TRUE, stringsAsFactors=FALSE, header=TRUE)
@@ -9,11 +11,15 @@ which_catalog <- function(in_catalog,in_category) {
   else {
     catalog_input <- read.csv("catalog_0430.csv",fill=TRUE, stringsAsFactors=FALSE, header=TRUE)
   }
+#
+# call the product type quantile function based on the category the customer has
+# requested.
+#
   if (in_category == 'Apparel') {
-    get_quant(catalog_input,c("gl_apparel"))
+    get_quant(catalog_input,c("apparel"))
   } 
   else {
-    get_quant(catalog_input,c("gl_home"))
+    get_quant(catalog_input,c("home"))
   } 
 }
 #
